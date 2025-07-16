@@ -6,7 +6,10 @@ import adminRouter from "./Routers/adminRouter.js";
 import cors from 'cors';
 
 const App = express();
-App.use(cors());
+app.use(cors({
+  origin: "https://bankfrontend-2.onrender.com", // your frontend URL
+  credentials: true // optional: only if you're using cookies
+}));
 App.use(express.json())
 App.use(express.urlencoded({extended:true}))
 
